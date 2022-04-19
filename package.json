@@ -1,0 +1,19 @@
+{
+  "name": "online-store",
+  "version": "1.0.0",
+  "description": "tienda online que despliega productos agrupados por la categoría la que pertenecen",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiran-trrzs/online-store.git"
+  },
+  "author": "shiran-trrzs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiran-trrzs/online-store/issues"
+  },
+  "homepage": "https://github.com/shiran-trrzs/online-store#readme"
+}
