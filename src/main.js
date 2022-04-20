@@ -11,9 +11,7 @@ fetch(`${apiURL}category/`,)
     category.forEach( cat => {
         let categoryOption = document.createElement('option');
         categoryOption.setAttribute('value', `${cat.name}`);
-        categoryOption.appendChild(
-            document.createTextNode(`${cat.name}`)
-        );
+        categoryOption.innerHTML = cat.name;
         selectOption.appendChild(categoryOption)
     });
 
