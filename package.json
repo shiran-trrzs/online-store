@@ -2,9 +2,10 @@
   "name": "online-store",
   "version": "1.0.0",
   "description": "tienda online que despliega productos agrupados por la categoría la que pertenecen",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "start": "serve src"
   },
   "repository": {
     "type": "git",
