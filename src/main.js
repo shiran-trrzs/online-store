@@ -1,11 +1,15 @@
 const apiURL = 'https://bsaleonlinestore.herokuapp.com/';
 
-const HTMLResponse = document.querySelector('#filterSection');
+const categorySection = document.querySelector('#filterSection');
 const selectOption = document.createElement('select');
 selectOption.setAttribute('id', 'chooseCategory');
 selectOption.setAttribute('class', 'chooseCategory');
 
-fetch(`${apiURL}category/`,)
+const productsSection = document.querySelector('#showProducts');
+
+
+
+fetch(`${apiURL}category`)
 .then((res, rej) => res.json())
 .then((category) => {
     category.forEach( cat => {
@@ -15,5 +19,20 @@ fetch(`${apiURL}category/`,)
         selectOption.appendChild(categoryOption)
     });
 
-    HTMLResponse.appendChild(selectOption);
+    categorySection.appendChild(selectOption);
+})
+
+fetch(`${apiURL}product`)
+.then((res, rej) => res.json())
+.then((product) => {
+    console.log(product);
+    product.forEach( prod => {
+        const productDiv = document.createElement('div');
+        let {url_image} = prod;
+        let productImg = document.createElement('img');
+        productImg.src = url_image;
+        productDiv.appendChild(productImg);
+        productsSection.appendChild(productDiv);
+    });
+    
 })
