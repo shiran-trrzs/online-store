@@ -39,6 +39,7 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     row-gap: 30px;
+    margin-bottom: 13vh;
 }
 
 .prodDiv {
@@ -63,4 +64,13 @@ img {
 
 .textDetProd {
     text-align: center;
+}
+
+.footer{
+    background: #000000;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
