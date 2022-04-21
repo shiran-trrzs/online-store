@@ -67,3 +67,9 @@ selectOption.addEventListener('change', () => {
         tlpProducts(product);
     })
 })
+
+const reload= document.querySelector('#refresh');
+reload.addEventListener('click', ()=>{
+    showAllProducts();
+    selectOption.selectedIndex  = 0;
+});
