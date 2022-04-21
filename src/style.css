@@ -1,4 +1,17 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin:0%;
+}
 
+.logo {
+    background: rgba(242, 164, 100, 0.723);
+    height: 100px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
 
 #showProducts {
     display: flex;
