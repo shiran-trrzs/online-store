@@ -27,13 +27,27 @@ fetch(`${apiURL}product`)
 .then((product) => {
     console.log(product);
     product.forEach( prod => {
-        const productDiv = document.createElement('div');
-        productDiv.setAttribute('class', 'prodImg')
-        const {url_image} = prod;
+        const productCardDiv = document.createElement('div');
+        productCardDiv.setAttribute('class', 'prodDiv');
+
+        const prodDiv = document.createElement('div');
+        prodDiv.setAttribute('class', 'prodImg')
         const productImg = document.createElement('img');
-        productImg.src = url_image;
-        productDiv.appendChild(productImg);
-        productsSection.appendChild(productDiv);
+        productImg.src = prod.url_image;
+
+        const prodDetailDiv = document.createElement('div');
+        prodDetailDiv.setAttribute('class', 'textDetProd')
+        const productName = document.createElement('h4');
+        const productPrice = document.createElement('p');
+        productName.innerHTML = prod.name;
+        productPrice.innerHTML = prod.price + ' pesos';
+
+        productCardDiv.appendChild(prodDiv);
+        prodDiv.appendChild(productImg);
+        productCardDiv.appendChild(prodDetailDiv);
+        prodDetailDiv.appendChild(productName);
+        prodDetailDiv.appendChild(productPrice);
+        productsSection.appendChild(productCardDiv);
     });
     
 })

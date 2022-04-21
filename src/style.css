@@ -4,14 +4,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 30px;
+}
+
+.prodDiv {
+    width: 336.31px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 1px #0003;
+    border-radius: 10px;
+}
+
+.prodImg {
+    display: flex;
+    justify-content: center;
 }
 
 img {
     height: 250px;
 }
 
-.prodImg {
-    width: 336.31px;
-    display: flex;
-    justify-content: center;
+.textDetProd {
+    text-align: center;
 }
