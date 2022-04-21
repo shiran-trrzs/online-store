@@ -1,0 +1,17 @@
+
+
+#showProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+img {
+    height: 250px;
+}
+
+.prodImg {
+    width: 336.31px;
+    display: flex;
+    justify-content: center;
+}

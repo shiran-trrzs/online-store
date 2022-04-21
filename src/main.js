@@ -28,8 +28,9 @@ fetch(`${apiURL}product`)
     console.log(product);
     product.forEach( prod => {
         const productDiv = document.createElement('div');
-        let {url_image} = prod;
-        let productImg = document.createElement('img');
+        productDiv.setAttribute('class', 'prodImg')
+        const {url_image} = prod;
+        const productImg = document.createElement('img');
         productImg.src = url_image;
         productDiv.appendChild(productImg);
         productsSection.appendChild(productDiv);
