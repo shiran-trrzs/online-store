@@ -22,6 +22,10 @@ body{
     margin-bottom: 60px;
 }
 
+p {
+    font-weight: bold;
+}
+
 .chooseCategory {
     border: none;
     height: 5vh;
@@ -84,7 +88,22 @@ img {
     order: 1;
 }
 
+#search {
+    border: none;
+    outline: none;
+    padding: 9px 10px 9px 35px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255) url("https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
+    width: 100px;
+    height: 40px;
+    transition: all .5s;
+}
 
+#search:hover {
+    width: 160px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 
 .footer{
     background: #000000;
