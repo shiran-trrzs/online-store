@@ -49,6 +49,9 @@ p {
     justify-content: space-around;
     row-gap: 30px;
     margin-bottom: 13vh;
+    margin-right: 20px;
+    margin-left: 20px;
+    column-gap: 15px;
 }
 
 .prodDiv {
