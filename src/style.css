@@ -48,7 +48,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 2px 2px 2px 1px #0003;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
 }
@@ -84,6 +84,12 @@ img {
     justify-content: flex-end;
     margin-top: -110px;
     margin-bottom: 5%;
+}
+
+.filterSearchProduct {
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
 }
 
 .footer{
