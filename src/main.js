@@ -7,32 +7,34 @@ selectOption.setAttribute('class', 'chooseCategory');
 
 const productsSection = document.querySelector('#showProducts');
 
-fetch(`${apiURL}category`)
-.then((res, rej) => res.json())
-.then((category) => {
-    category.forEach( cat => {
-        let categoryOption = document.createElement('option');
-        categoryOption.setAttribute('value', `${cat.id}`);
-        categoryOption.innerHTML = cat.name;
-        selectOption.appendChild(categoryOption)
-    });
+const inputSearch = document.querySelector('#search');
 
-    categorySection.appendChild(selectOption);
-})
+fetch(`${apiURL}category`)
+    .then((res, rej) => res.json())
+    .then((category) => {
+        category.forEach(cat => {
+            let categoryOption = document.createElement('option');
+            categoryOption.setAttribute('value', `${cat.id}`);
+            categoryOption.innerHTML = cat.name;
+            selectOption.appendChild(categoryOption)
+        });
+
+        categorySection.appendChild(selectOption);
+    })
 
 function showAllProducts() {
     fetch(`${apiURL}product`)
-    .then((res, rej) => res.json())
-    .then((product) => {
-        tlpProducts(product)
-    })
+        .then((res, rej) => res.json())
+        .then((product) => {
+            tlpProducts(product)
+        })
 }
 
 function tlpProducts(product) {
 
-    showProducts.innerHTML= '';
+    showProducts.innerHTML = '';
 
-    product.forEach( prod => {
+    product.forEach(prod => {
         const productCardDiv = document.createElement('div');
         productCardDiv.setAttribute('class', 'prodDiv');
 
@@ -62,14 +64,22 @@ showAllProducts()
 selectOption.addEventListener('change', () => {
     const selectCategory = selectOption.value;
     fetch(`${apiURL}product/${selectCategory}`)
-    .then((res, rej) => res.json())
-    .then((product) => {
-        tlpProducts(product);
-    })
+        .then((res, rej) => res.json())
+        .then((product) => {
+            tlpProducts(product);
+        })
 })
 
-const reload= document.querySelector('#refresh');
-reload.addEventListener('click', ()=>{
+const reload = document.querySelector('#refresh');
+reload.addEventListener('click', () => {
     showAllProducts();
-    selectOption.selectedIndex  = 0;
+    selectOption.selectedIndex = 0;
 });
+
+inputSearch.addEventListener('keyup', (e) => {
+    let text = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.prodDiv').forEach( product => {
+        product.textContent.toLowerCase().includes(text) ? product.classList.remove('filterSearchProduct') : product.classList.add('filterSearchProduct')
+    })
+})
